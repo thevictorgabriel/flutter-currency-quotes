@@ -1,0 +1,78 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Arquivos do Flutter
+**/flutter_*/**
+**/Flutter.podspec
+**/Generated.xcconfig
+**/Pods/
+**/android/gradle-wrapper.jar
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/.last_build_id
+**/lib/generated_plugin_registrant.dart
+
+# Build e diretórios gerados
+**/build/
+**/android/app/build/
+**/ios/
+**/web/
+**/test/coverage/
+**/.dart_tool/
+**/.packages
+**/pubspec.lock
+
+# Arquivos de ambiente e configurações locais
+**/.env
+**/.env.local
+**/.env*.local
+**/*.env
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.metadata
+**/.idea/
+**/.vscode/
+**/*.iml
+**/local.properties
+**/flutter_console.log
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
