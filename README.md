@@ -22,3 +22,10 @@ O aplicativo consome dados da [ExchangeRate-API](https://www.exchangerate-api.co
 - Dart (versão compatível com o Flutter)
 - Dispositivo móvel ou emulador para testes
 
+## Dependências
+
+Pacote **http 1.4.0**
+```bash
+flutter pub add http
+```
+
