@@ -1,17 +1,32 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../models/rate_model.dart';
 
 class ApiService {
-  static const String baseUrl = 'https://open.er-api.com/v6/latest/USD';
+  static const String apiKey = 'f8ebbebeef7965b3fdb21438';
 
-  static Future<Map<String, dynamic>> fetchExchangeRates() async {
-    final response = await http.get(Uri.parse(baseUrl));
+  static Future<List<RateModel>> fetchRates(String baseCode) async {
+    final url = Uri.parse('https://v6.exchangerate-api.com/v6/$apiKey/latest/$baseCode');
+    final response = await http.get(url);
 
     if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      return data['rates'];
+      final Map<String, dynamic> data = jsonDecode(response.body);
+      final rates = data['conversion_rates'] as Map<String, dynamic>;
+
+      return rates.entries.map((e) => RateModel(baseCode, e.key, e.value.toDouble())).toList();
     } else {
-      throw Exception('Falha ao carregar cotações');
+      throw Exception('Erro ao carregar as cotações');
+    }
+  }
+
+  static Future<Map<String, dynamic>> fetchDetails(String base, String target) async {
+    final url = Uri.parse('https://v6.exchangerate-api.com/v6/$apiKey/pair/$base/$target');
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception('Erro ao carregar detalhes');
     }
   }
 }
