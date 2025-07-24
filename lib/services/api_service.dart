@@ -5,9 +5,10 @@ import '../models/rate_model.dart';
 class ApiService {
   static const String apiKey = 'f8ebbebeef7965b3fdb21438';
 
-  static Future<List<RateModel>> fetchRates(String baseCode) async {
+  static Future<List<RateModel>> fetchRates(String baseCode, {http.Client? client}) async {
+    client ??= http.Client(); // se não passar um client, usa o padrão
     final url = Uri.parse('https://v6.exchangerate-api.com/v6/$apiKey/latest/$baseCode');
-    final response = await http.get(url);
+    final response = await client.get(url);
 
     if (response.statusCode == 200) {
       final Map<String, dynamic> data = jsonDecode(response.body);
@@ -19,9 +20,10 @@ class ApiService {
     }
   }
 
-  static Future<Map<String, dynamic>> fetchDetails(String base, String target) async {
+  static Future<Map<String, dynamic>> fetchDetails(String base, String target, {http.Client? client}) async {
+    client ??= http.Client();
     final url = Uri.parse('https://v6.exchangerate-api.com/v6/$apiKey/pair/$base/$target');
-    final response = await http.get(url);
+    final response = await client.get(url);
 
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
