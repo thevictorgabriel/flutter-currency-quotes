@@ -4,10 +4,11 @@ Este é um aplicativo desenvolvido em **Flutter** que permite ao usuário consul
 
 ## 📱 Funcionalidades
 
-- Exibição de cotações atualizadas de moedas estrangeiras.
-- Interface simples e responsiva.
-- Requisições HTTP com tratamento de erro.
-- Suporte multiplataforma (Android e iOS).
+- Consulta de cotações financeiras em tempo real
+- Listagem das principais moedas na tela inicial
+- Navegação para tela de detalhes com informações adicionais
+- Interface amigável e responsiva
+- Testes unitários básicos
 
 ---
 
