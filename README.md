@@ -52,7 +52,7 @@ Você pode selecionar o dispositivo diretamente na IDE (VSCode, Android Studio) 
 
 A aplicação utiliza a seguinte API para obter as cotações:
 
-**[AwesomeAPI - Economia](https://docs.awesomeapi.com.br/api-de-moedas)**
+**[ExchangeRate-API - Economia](https://www.exchangerate-api.com/docs/standard-requests)**
 
 ---
 
